@@ -234,7 +234,7 @@ async def next_page(bot, query):
                                   callback_data="pages")]
         )
         btn.append(
-            [InlineKeyboardButton("👉 How To Download 👈 ", url=f"hhttps://t.me/moviesss4ers/14")])
+            [InlineKeyboardButton("⚡ H O W TO O P E N ⚡ ", url=f"https://t.me/+Rf7HPykmLC5hOWQ9")])
         btn.append(
             [InlineKeyboardButton('Ok Close it 🙂', callback_data='close_data')])
     elif off_set is None:
@@ -242,7 +242,7 @@ async def next_page(bot, query):
             [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
         btn.append(
-            [InlineKeyboardButton("👉 How To Download 👈 ", url=f"https://t.me/moviesss4ers/14")])
+            [InlineKeyboardButton("⚡ H O W TO O P E N ⚡ ", url=f"https://t.me/+Rf7HPykmLC5hOWQ9")])
         btn.append([InlineKeyboardButton('Ok Close it 🙂', callback_data='close_data')])
     else:
         btn.append(
@@ -252,7 +252,7 @@ async def next_page(bot, query):
                 InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
-        btn.append([InlineKeyboardButton("👉 How To Download 👈 ", url=f"https://t.me/moviesss4ers/14")])
+        btn.append([InlineKeyboardButton("⚡ H O W TO O P E N ⚡ ", url=f"https://t.me/+Rf7HPykmLC5hOWQ9")])
         btn.append([InlineKeyboardButton('Ok Close it 🙂', callback_data='close_data')])
     try:
         await query.edit_message_reply_markup(
@@ -282,7 +282,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie Not Found In DataBase If You Want This Movie Join Our Channel https://t.me/moviesss4ers')
+            k = await query.message.edit('This Movie Not Found In DataBase If You Want This Movie Join Our Channel https://t.me/ROCKERSBACKUP')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -553,13 +553,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('Channel 👀', url='https://t.me/moviesss4ers'),
-            InlineKeyboardButton('Group 👀', url='https://t.me/moviei43')
+            InlineKeyboardButton('Channel 👀', url='https://t.me/ROCKERSBACKUP'),
+            InlineKeyboardButton('Group 💝', url='https://t.me/ASK_YOUR_MOVIES_HD')
         ], [
             InlineKeyboardButton('Help ⚡', callback_data='help'),
             InlineKeyboardButton('About Me 💥', callback_data='about')
         ], [
-            InlineKeyboardButton('Any Queries DM Here ✅',url='https://t.me/Link_Reporter_Bot')
+            InlineKeyboardButton('Any help msg',url='https://t.me/Beastonejnanesh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -587,7 +587,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('Developer 😎', url='https://t.me/Nexus_Shubhu'),
+            InlineKeyboardButton('Developer 😎', url='https://t.me/Beastonejnanesh '),
             InlineKeyboardButton('Source Code', url='https://t.me/TeamEvamaria')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
@@ -826,7 +826,7 @@ async def auto_filter(client, msg, spoll=False):
              )
 
     btn.append([
-                InlineKeyboardButton("👉 How To Download 👈 ", url=f"https://t.me/moviesss4ers/14"),
+                InlineKeyboardButton("⚡ H O W TO O P E N ⚡ ", url=f"https://t.me/+Rf7HPykmLC5hOWQ9"),
             ])
     btn.append([InlineKeyboardButton('Ok Close it 🙂', callback_data='close_data')])     
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
@@ -879,11 +879,11 @@ async def auto_filter(client, msg, spoll=False):
         except Exception as e:
             logger.exception(e)
             kmn=await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(60)
+            await asyncio.sleep(80)
             await kmn.delete()
     else:
         kll=await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(60)
+        await asyncio.sleep(80)
         await kll.delete()
     if spoll:
         await msg.message.delete()
@@ -972,7 +972,7 @@ async def manual_filters(client, message, text=False):
                                 reply_markup=InlineKeyboardMarkup(button),
                                 reply_to_message_id=reply_id
                             )
-                            await asyncio.sleep(60) 
+                            await asyncio.sleep(80) 
                             await pm.delete()
                             
                     elif btn == "[]":
@@ -982,7 +982,7 @@ async def manual_filters(client, message, text=False):
                             caption=reply_text or "",
                             reply_to_message_id=reply_id
                         ) 
-                        await asyncio.sleep(60) 
+                        await asyncio.sleep(80) 
                         await pl.delete()
                     else:
                         button = eval(btn)
@@ -992,7 +992,7 @@ async def manual_filters(client, message, text=False):
                             reply_markup=InlineKeyboardMarkup(button),
                             reply_to_message_id=reply_id
                         )
-                        await asyncio.sleep(60) 
+                        await asyncio.sleep(80) 
                         await nk.delete()
                 except Exception as e:
                     logger.exception(e)
