@@ -856,7 +856,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"hey Mrs here is ur request {search}  movie file 📁 👇"
+        cap = f" ur request {search}  movie file 📁 👇"
     if imdb and imdb.get('poster'):
         try:
           a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -871,11 +871,11 @@ async def auto_filter(client, msg, spoll=False):
         except Exception as e:
             logger.exception(e)
             kmn=await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(8)
+            await asyncio.sleep(60)
             await kmn.delete()
     else:
         kll=await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(8)
+        await asyncio.sleep(60)
         await kll.delete()
     if spoll:
         await msg.message.delete()
@@ -891,7 +891,7 @@ async def advantage_spell_chok(msg):
     gs_parsed = []
     if not g_s:
         k = await msg.reply("I couldn't find any movie in that name. If You Want Tis Movi e Request Us at - https://t.me/ROCKERSBACKUP")
-        await asyncio.sleep(8)
+        await asyncio.sleep(30)
         await k.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
@@ -952,31 +952,39 @@ async def manual_filters(client, message, text=False):
                 try:
                     if fileid == "None":
                         if btn == "[]":
-                            await client.send_message(group_id, reply_text, disable_web_page_preview=True)                     
+                            msg=await client.send_message(group_id, reply_text, disable_web_page_preview=True)  
+                            await asyncio.sleep(80) await msg.delete()
                         else:
                             button = eval(btn)
-                            await client.send_message(
+                            pm=await client.send_message(
                                 group_id,
                                 reply_text,
                                 disable_web_page_preview=True,
                                 reply_markup=InlineKeyboardMarkup(button),
                                 reply_to_message_id=reply_id
                             )
+                            await asyncio.sleep(60) 
+                            await pm.delete()
+                            
                     elif btn == "[]":
-                        await client.send_cached_media(
+                        pl=await client.send_cached_media(
                             group_id,
                             fileid,
                             caption=reply_text or "",
                             reply_to_message_id=reply_id
-                        )                 
+                        ) 
+                        await asyncio.sleep(60) 
+                        await pl.delete()
                     else:
                         button = eval(btn)
-                        await message.reply_cached_media(
+                        nk=await message.reply_cached_media(
                             fileid,
                             caption=reply_text or "",
                             reply_markup=InlineKeyboardMarkup(button),
                             reply_to_message_id=reply_id
-                        )                                
+                        )
+                        await asyncio.sleep(60) 
+                        await nk.delete()
                 except Exception as e:
                     logger.exception(e)
                 break
