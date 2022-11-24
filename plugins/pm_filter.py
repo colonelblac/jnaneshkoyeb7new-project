@@ -948,9 +948,11 @@ async def manual_filters(client, message, text=False):
                 try:
                     if fileid == "None":
                         if btn == "[]":
-                            await client.send_message(group_id, reply_text, disable_web_page_preview=True)
+                            final_msg = await client.send_message(group_id, reply_text, disable_web_page_preview=True)
+                            await asyncio.sleep(60)
+                            await final_msg.delete()
                         else:
-                            button = eval(btn)
+                            final_msg = button = eval(btn)
                             await client.send_message(
                                 group_id,
                                 reply_text,
@@ -958,21 +960,27 @@ async def manual_filters(client, message, text=False):
                                 reply_markup=InlineKeyboardMarkup(button),
                                 reply_to_message_id=reply_id
                             )
+                            await asyncio.sleep(60)
+                            await final_msg.delete()
                     elif btn == "[]":
-                        await client.send_cached_media(
+                        final_msg = await client.send_cached_media(
                             group_id,
                             fileid,
                             caption=reply_text or "",
                             reply_to_message_id=reply_id
                         )
+                        await asyncio.sleep(60)
+                        await final_msg.delete()
                     else:
                         button = eval(btn)
-                        await message.reply_cached_media(
+                        final_msg = await message.reply_cached_media(
                             fileid,
                             caption=reply_text or "",
                             reply_markup=InlineKeyboardMarkup(button),
                             reply_to_message_id=reply_id
                         )
+                        await asyncio.sleep(60) 
+                        await final_msg.delete()
                 except Exception as e:
                     logger.exception(e)
                 break
