@@ -119,7 +119,7 @@ async def give_filter(client,message):
                                 reply_markup=InlineKeyboardMarkup(button)
 
                             )
-                            await asyncio.sleep(10)
+                            await asyncio.sleep(60)
                             await op.delete()
 
                     elif btn == "[]":
@@ -147,7 +147,7 @@ async def give_filter(client,message):
                             reply_markup=InlineKeyboardMarkup(button)
 
                         )
-                        await asyncio.sleep(10) 
+                        await asyncio.sleep(60) 
                         await up.delete()
 
                 except Exception as e:
