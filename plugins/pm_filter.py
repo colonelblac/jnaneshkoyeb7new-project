@@ -102,7 +102,9 @@ async def give_filter(client,message):
 
                         if btn == "[]":
 
-                            await message.reply_text(reply_text, disable_web_page_preview=True)
+                            final_msg=await message.reply_text(reply_text, disable_web_page_preview=True)
+                            await asyncio.sleep(60)
+                            await final_msg.delete()
 
                         else:
 
@@ -117,6 +119,8 @@ async def give_filter(client,message):
                                 reply_markup=InlineKeyboardMarkup(button)
 
                             )
+                            await asyncio.sleep(60)
+                            await final_msg.delete()
 
                     elif btn == "[]":
 
@@ -127,6 +131,8 @@ async def give_filter(client,message):
                             caption=reply_text or ""
 
                         )
+                        await asyncio.sleep(60) 
+                        await final_msg.delete()
 
                     else:
 
@@ -141,6 +147,8 @@ async def give_filter(client,message):
                             reply_markup=InlineKeyboardMarkup(button)
 
                         )
+                        await asyncio.sleep(60) 
+                        await final_msg.delete()
 
                 except Exception as e:
 
