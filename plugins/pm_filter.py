@@ -928,7 +928,7 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
         k = await msg.reply("𝐈 𝐭𝐡𝐢𝐧𝐤 𝐭𝐡𝐢𝐬 𝐦𝐨𝐯𝐢𝐞 𝐧𝐨𝐭 𝐫𝐞𝐥𝐞𝐚𝐬𝐞𝐝 𝐀𝐫𝐞 𝐦𝐲 𝐨𝐰𝐧𝐞𝐫 𝐧𝐨𝐭 𝐮𝐩𝐥𝐨𝐚𝐝")
-         asyncio.sleep(8)
+        asyncio.sleep(10)
         await k.delete()
         return
     SPELL_CHECK[msg.id] = movielist
