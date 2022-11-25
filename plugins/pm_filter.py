@@ -939,10 +939,9 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    u = await msg.reply("𝐓𝐲𝐩𝐞 𝐜𝐨𝐫𝐫𝐞𝐜𝐭 𝐦𝐨𝐯𝐢𝐞 𝐧𝐚𝐦𝐞 𝐚𝐫𝐞 𝐠𝐨 𝐭𝐨 𝐆𝐨𝐨𝐠𝐥𝐞 𝐜𝐡𝐞𝐜𝐤 𝐬𝐩𝐞𝐥𝐥𝐢𝐧𝐠 /n𝐚𝐫𝐞 𝐜𝐡𝐞𝐜𝐤 𝐛𝐞𝐥𝐨𝐰",
-                    reply_markup=InlineKeyboardMarkup(btn))
-     asyncio.sleep(30)
-     await u.delete()
+    u = await msg.reply("𝐓𝐲𝐩𝐞 𝐜𝐨𝐫𝐫𝐞𝐜𝐭 𝐦𝐨𝐯𝐢𝐞 𝐧𝐚𝐦𝐞 𝐚𝐫𝐞 𝐠𝐨 𝐭𝐨 𝐆𝐨𝐨𝐠𝐥𝐞 𝐜𝐡𝐞𝐜𝐤 𝐬𝐩𝐞𝐥𝐥𝐢𝐧𝐠 /n𝐚𝐫𝐞 𝐜𝐡𝐞𝐜𝐤 𝐛𝐞𝐥𝐨𝐰",reply_markup=InlineKeyboardMarkup(btn))                    
+    asyncio.sleep(30)
+    await u.delete()
 
 
 async def manual_filters(client, message, text=False):
