@@ -928,7 +928,7 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
         k = await msg.reply("𝐈 𝐭𝐡𝐢𝐧𝐤 𝐭𝐡𝐢𝐬 𝐦𝐨𝐯𝐢𝐞 𝐧𝐨𝐭 𝐫𝐞𝐥𝐞𝐚𝐬𝐞𝐝 𝐀𝐫𝐞 𝐦𝐲 𝐨𝐰𝐧𝐞𝐫 𝐧𝐨𝐭 𝐮𝐩𝐥𝐨𝐚𝐝")
-        asyncio.sleep(80)
+        asyncio.sleep(10)
         await k.delete()
         return
     SPELL_CHECK[msg.id] = movielist
@@ -939,9 +939,9 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    u = await msg.reply("𝐓𝐲𝐩𝐞 𝐜𝐨𝐫𝐫𝐞𝐜𝐭 𝐦𝐨𝐯𝐢𝐞 𝐧𝐚𝐦𝐞 𝐚𝐫𝐞 𝐠𝐨 𝐭𝐨 𝐆𝐨𝐨𝐠𝐥𝐞 𝐜𝐡𝐞𝐜𝐤 𝐬𝐩𝐞𝐥𝐥𝐢𝐧𝐠 𝐚𝐫𝐞 𝐜𝐡𝐞𝐜𝐤 𝐛𝐞𝐥𝐨𝐰",reply_markup=InlineKeyboardMarkup(btn))                    
-    asyncio.sleep(90)
-    await u.delete()
+    g = await msg.reply("𝐓𝐲𝐩𝐞 𝐜𝐨𝐫𝐫𝐞𝐜𝐭 𝐦𝐨𝐯𝐢𝐞 𝐧𝐚𝐦𝐞 𝐚𝐫𝐞 𝐠𝐨 𝐭𝐨 𝐆𝐨𝐨𝐠𝐥𝐞 𝐜𝐡𝐞𝐜𝐤 𝐬𝐩𝐞𝐥𝐥𝐢𝐧𝐠 𝐚𝐫𝐞 𝐜𝐡𝐞𝐜𝐤 𝐛𝐞𝐥𝐨𝐰",reply_markup=InlineKeyboardMarkup(btn))                    
+    asyncio.sleep(20)
+    await g.delete()
 
 
 async def manual_filters(client, message, text=False):
