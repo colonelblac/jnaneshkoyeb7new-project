@@ -864,7 +864,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f" 𝐇𝐞𝐲{username}        
+        cap = f" 𝐇𝐞𝐲 client       
              𝐮𝐫 𝐫𝐞𝐪𝐮𝐞𝐬𝐭 𝐦𝐨𝐯𝐢𝐞 🖥 reply_markup={search} 𝐟𝐢𝐥𝐞 𝐡𝐞𝐫𝐞 "
     if imdb and imdb.get('poster'):
         try:
@@ -951,7 +951,7 @@ async def manual_filters(client, message, text=False):
     reply_id = message.reply_to_message.id if message.reply_to_message else message.id
     keywords = await get_filters(group_id)
     for keyword in reversed(sorted(keywords, key=len)):
-        pattern = r"( |^|[^\w])" + re.escape(keyword) + r"( |$|[^\w])"
+        pattern = r"( |^|[^\w])" + re.escape(keyword) + r" |$|[^\w])"
         if re.search(pattern, name, flags=re.IGNORECASE):
             reply_text, btn, alert, fileid = await find_filter(group_id, keyword)
 
@@ -962,7 +962,7 @@ async def manual_filters(client, message, text=False):
                 try:
                     if fileid == "None":
                         if btn == "[]":
-                            jj=await client.send_message(group_id, reply_text, disable_web_page_preview=True)  
+                            jj=await , reply_text, disable_web_page_preview=True)  
                             await asyncio.sleep(80) 
                             await jj.delete()
                         else:
