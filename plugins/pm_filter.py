@@ -864,8 +864,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f" 𝐇𝐞𝐲  {message_id} 
-        
+        cap = f" 𝐇𝐞𝐲{username}        
              𝐮𝐫 𝐫𝐞𝐪𝐮𝐞𝐬𝐭 𝐦𝐨𝐯𝐢𝐞 🖥 reply_markup={search} 𝐟𝐢𝐥𝐞 𝐡𝐞𝐫𝐞 "
     if imdb and imdb.get('poster'):
         try:
