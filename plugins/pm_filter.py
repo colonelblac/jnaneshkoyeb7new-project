@@ -864,7 +864,9 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f" 𝐇𝐞𝐲 𝐮𝐫 𝐫𝐞𝐪𝐮𝐞𝐬𝐭 𝐦𝐨𝐯𝐢𝐞 {search} 𝐟𝐢𝐥𝐞 𝐡𝐞𝐫𝐞 "
+        cap = f" 𝐇𝐞𝐲 <a href=https://t.me/{}>{}</a> 
+        
+             𝐮𝐫 𝐫𝐞𝐪𝐮𝐞𝐬𝐭 𝐦𝐨𝐯𝐢𝐞 🖥 reply_markup={search} 𝐟𝐢𝐥𝐞 𝐡𝐞𝐫𝐞 "
     if imdb and imdb.get('poster'):
         try:
           a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
